@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #1a2235;
+  --secondary: #c8a96e;
+  --accent: #e8c87a;
+  --light: #f5f5f0;
+  --white: #ffffff;
+  --gray: #6b7280;
+  --dark-gray: #374151;
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--white);
+  color: var(--primary);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  /* About */
+  .about-container { grid-template-columns: 1fr !important; }
+  
+  /* Services tabs */
+  .tabs { grid-template-columns: repeat(2, 1fr) !important; }
+  .services-content { grid-template-columns: 1fr !important; }
+  
+  /* Quality */
+  .cert-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .process-steps { grid-template-columns: repeat(2, 1fr) !important; }
+  
+  /* Footer */
+  .footer-container { grid-template-columns: 1fr 1fr !important; gap: 40px !important; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  /* Stats bar */
+  .stats-bar { grid-template-columns: repeat(2, 1fr) !important; padding: 16px 20px !important; }
+  
+  /* Nav desktop links */
+  nav ul { display: none !important; }
+  nav button { display: flex !important; }
+  
+  /* Contact */
+  .contact-container { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .form-row { grid-template-columns: 1fr !important; }
+  
+  /* General padding */
+  section { padding-left: 20px !important; padding-right: 20px !important; }
+  
+  /* About values */
+  .values-grid { grid-template-columns: 1fr !important; }
+  
+  /* Banner */
+  .banner { flex-direction: column !important; text-align: center !important; }
+}
+
+@media (max-width: 480px) {
+  .stats-bar { grid-template-columns: repeat(2, 1fr) !important; }
+  .cert-grid { grid-template-columns: 1fr !important; }
+}
